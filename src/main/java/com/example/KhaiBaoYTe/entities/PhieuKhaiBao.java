@@ -19,6 +19,8 @@ public class PhieuKhaiBao {
     private int maPhieu;
     private String diachi;
     private Date ngayKhaiBao;
+    private int namsinh;
+    private String quoctich;
     private String noiKhaiBao;
     private String noiDi;
     private String noiDen;
