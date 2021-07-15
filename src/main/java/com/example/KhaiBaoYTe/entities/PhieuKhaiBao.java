@@ -17,10 +17,13 @@ public class PhieuKhaiBao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maPhieu;
+    private String hoten;
     private String diachi;
     private Date ngayKhaiBao;
     private int namsinh;
+    private String email;
     private String quoctich;
+    private String gioitinh;
     private String noiKhaiBao;
     private String noiDi;
     private String noiDen;
@@ -39,10 +42,30 @@ public class PhieuKhaiBao {
     @ManyToOne
     @JoinColumn(name = "cccd")
     private TaiKhoan taiKhoan;
-    @ManyToOne
-    @JoinColumn(name = "cccdnguoithan")
-    private NguoiThan nguoiThan;
 
-
-
+    public PhieuKhaiBao(String hoten, String diachi, Date ngayKhaiBao, int namsinh, String email, String quoctich, String gioitinh, String noiKhaiBao, String noiDi, String noiDen, String phuongTien, String ngayDi, String ngayDen, String SDT, Boolean denVungDich, Boolean tiepXucNguoiBenh, Boolean sot, Boolean ho, Boolean khoTho, Boolean dauHong, Boolean moiCo, Boolean hatHoi, TaiKhoan taiKhoan) {
+        this.hoten = hoten;
+        this.diachi = diachi;
+        this.ngayKhaiBao = ngayKhaiBao;
+        this.namsinh = namsinh;
+        this.email = email;
+        this.quoctich = quoctich;
+        this.gioitinh = gioitinh;
+        this.noiKhaiBao = noiKhaiBao;
+        this.noiDi = noiDi;
+        this.noiDen = noiDen;
+        this.phuongTien = phuongTien;
+        this.ngayDi = ngayDi;
+        this.ngayDen = ngayDen;
+        this.SDT = SDT;
+        this.denVungDich = denVungDich;
+        this.tiepXucNguoiBenh = tiepXucNguoiBenh;
+        this.sot = sot;
+        this.ho = ho;
+        this.khoTho = khoTho;
+        this.dauHong = dauHong;
+        this.moiCo = moiCo;
+        this.hatHoi = hatHoi;
+        this.taiKhoan = taiKhoan;
+    }
 }

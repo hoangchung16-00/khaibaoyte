@@ -14,7 +14,7 @@ import java.util.List;
 public class DiaChi {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int maDiaChi;
+    private int madiachi;
     private String duong;
     private String soNha;
     @ManyToOne

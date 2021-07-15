@@ -28,7 +28,5 @@ public class NguoiThan {
     @ManyToOne
     @JoinColumn(name = "madiachi")
     private DiaChi diaChi;
-    @OneToMany(mappedBy = "nguoiThan")
-    private List<PhieuKhaiBao> phieuKhaiBaos;
 
 }

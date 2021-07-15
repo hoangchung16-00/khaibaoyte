@@ -25,12 +25,12 @@ public class TaiKhoan {
     private String username;
     private String password;
     @ManyToOne
-    @JoinColumn(name = "IDLoaiNguoiDung")
+    @JoinColumn(name = "idloainguoidung")
     private LoaiNguoiDung loaiNguoiDung;
     @OneToMany(mappedBy = "taiKhoan",fetch = FetchType.LAZY)
     private List<PhieuKhaiBao> phieuKhaiBaos;
     @ManyToOne
-    @JoinColumn(name = "maDiaChi")
+    @JoinColumn(name = "madiachi")
     private DiaChi diaChi;
     @OneToMany(mappedBy = "taiKhoan")
     private List<NguoiThan> nguoiThans;
