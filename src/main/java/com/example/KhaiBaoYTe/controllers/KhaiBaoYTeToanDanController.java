@@ -1,17 +1,18 @@
 package com.example.KhaiBaoYTe.controllers;
 
+import com.example.KhaiBaoYTe.entities.LoaiNguoiDung;
 import com.example.KhaiBaoYTe.entities.PhuongXa;
 import com.example.KhaiBaoYTe.entities.QuanHuyen;
+import com.example.KhaiBaoYTe.entities.TaiKhoan;
 import com.example.KhaiBaoYTe.forms.KhaiBaoYTeToanDanForm;
 import com.example.KhaiBaoYTe.models.PhuongXaModel;
 import com.example.KhaiBaoYTe.models.QuanHuyenModel;
-import com.example.KhaiBaoYTe.services.PhuongXaService;
-import com.example.KhaiBaoYTe.services.QuanHuyenService;
-import com.example.KhaiBaoYTe.services.TinhTPService;
+import com.example.KhaiBaoYTe.services.*;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -26,6 +27,12 @@ public class KhaiBaoYTeToanDanController {
     private QuanHuyenService quanHuyenService;
     @Autowired
     private PhuongXaService phuongXaService;
+    @Autowired
+    private PhieuKhaiBaoService phieuKhaiBaoService;
+    @Autowired
+    private TaiKhoanService taiKhoanService;
+    @Autowired
+    private LoaiNguoiDungService loaiNguoiDungService;
 
     @GetMapping("/khaibaoytetoandan")
     public String getKhaiBaoYTeToan(Model model){
@@ -56,8 +63,29 @@ public class KhaiBaoYTeToanDanController {
         return gson1.toJson(phuongXas);
     }
     @PostMapping("/khaibaoytetoandan")
-    public String postKhaiBaoYTeToan(@Valid @ModelAttribute("khaiBaoYTeToanDanForm") KhaiBaoYTeToanDanForm khaiBaoYTeToanDanForm){
-
+    public String postKhaiBaoYTeToan(@Valid @ModelAttribute("khaiBaoYTeToanDanForm") KhaiBaoYTeToanDanForm khaiBaoYTeToanDanForm, BindingResult bindingResult){
+        if (bindingResult.hasErrors()){
+            return "khaibaoytetoandan";
+        }
+        if(khaiBaoYTeToanDanForm.getCccd().equals(null)){
+            taiKhoanService.addTaiKhoanUser(khaiBaoYTeToanDanForm.getCccd(),khaiBaoYTeToanDanForm.getHoten(),
+                    khaiBaoYTeToanDanForm.getNamsinh(),khaiBaoYTeToanDanForm.getSDT(),
+                    khaiBaoYTeToanDanForm.getEmail(),khaiBaoYTeToanDanForm.getGioitinh(),
+                    loaiNguoiDungService.findLoaiNguoiDungByLoaiNguoiDung("user"));
+        }
+        String diachi = tinhTPService.findTinhTPByMaTinhTp(khaiBaoYTeToanDanForm.getMatinhtp()).getTentinhtp()+", "+
+                quanHuyenService.findQuanHuyenByMaQuanHuyen(khaiBaoYTeToanDanForm.getMaquanhuyen()).getTenquanhuyen()+", "+
+                phuongXaService.findPhuongXaByMaPhuongXa(khaiBaoYTeToanDanForm.getMaphuongxa()).getTenphuongxa()+", "+
+                khaiBaoYTeToanDanForm.getDiachi();
+        phieuKhaiBaoService.addPhieuKhaiBaoToanDan(khaiBaoYTeToanDanForm.getHoten(),khaiBaoYTeToanDanForm.getNamsinh(),
+                khaiBaoYTeToanDanForm.getEmail(),diachi,
+                khaiBaoYTeToanDanForm.getGioitinh(),khaiBaoYTeToanDanForm.getQuoctich(),
+                khaiBaoYTeToanDanForm.getSDT(),khaiBaoYTeToanDanForm.getDenVungDich(),
+                khaiBaoYTeToanDanForm.getTiepXucNguoiBenh(),khaiBaoYTeToanDanForm.getSot(),
+                khaiBaoYTeToanDanForm.getHo(),khaiBaoYTeToanDanForm.getKhoTho(),
+                khaiBaoYTeToanDanForm.getDauHong(),khaiBaoYTeToanDanForm.getMoiCo(),
+                khaiBaoYTeToanDanForm.getHatHoi(),khaiBaoYTeToanDanForm.getCccd(),
+                taiKhoanService.findTaiKhoanByCCCD(khaiBaoYTeToanDanForm.getCccd()));
         return "";
     }
 }

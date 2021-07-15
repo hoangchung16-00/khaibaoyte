@@ -15,4 +15,9 @@ public class TinhTPService {
     public List<TinhTP> findAll(){
         return tinhTPRepository.findAll();
     }
+
+    @Transactional
+    public TinhTP findTinhTPByMaTinhTp(String matinhtp){
+        return tinhTPRepository.findTinhTPByMatinhtp(matinhtp);
+    }
 }

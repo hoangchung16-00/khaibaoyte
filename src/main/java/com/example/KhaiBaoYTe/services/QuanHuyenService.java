@@ -19,4 +19,8 @@ public class QuanHuyenService {
     public List<QuanHuyen> findAllByMaTinhTp(String matinhtp){
         return quanHuyenRepository.findAllByMaTinhTP(matinhtp);
     }
+    @Transactional
+    public QuanHuyen findQuanHuyenByMaQuanHuyen(String maquanhuyen){
+        return quanHuyenRepository.findQuanHuyenByMaquanhuyen(maquanhuyen);
+    }
 }

@@ -21,4 +21,8 @@ public class PhuongXaService {
     public List<PhuongXa> findAllByMaQuanHuyen(String maquanhuyen){
         return phuongXaRepository.findAllByMaQuanHuyen(maquanhuyen);
     }
+    @Transactional
+    public PhuongXa findPhuongXaByMaPhuongXa(String maphuongxa){
+        return phuongXaRepository.findPhuongXaByMaphuongxa(maphuongxa);
+    }
 }

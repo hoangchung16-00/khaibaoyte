@@ -15,13 +15,13 @@ import java.util.List;
 public class TaiKhoan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String CCCD;
+    private String cccd;
     private String ten;
-    private Date ngaySinh;
-    private String SDT;
+    private int namsinh;
+    private String sdt;
     private String email;
-    private String gioiTinh;
-    private int soNguoiThan;
+    private String gioitinh;
+    private int songuoithan;
     private String username;
     private String password;
     @ManyToOne
@@ -34,4 +34,14 @@ public class TaiKhoan {
     private DiaChi diaChi;
     @OneToMany(mappedBy = "taiKhoan")
     private List<NguoiThan> nguoiThans;
+
+    public TaiKhoan(String cccd, String ten, int namsinh, String sdt, String email, String gioitinh, LoaiNguoiDung loaiNguoiDung) {
+        this.cccd = cccd;
+        this.ten = ten;
+        this.namsinh = namsinh;
+        this.sdt = sdt;
+        this.email = email;
+        this.gioitinh = gioitinh;
+        this.loaiNguoiDung = loaiNguoiDung;
+    }
 }
