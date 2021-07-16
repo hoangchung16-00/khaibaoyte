@@ -1,20 +1,19 @@
 package com.example.KhaiBaoYTe.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 @Entity
-@Table(name = "TaiKhoan")
-@Data
+@Table(name = "taikhoan")
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class TaiKhoan {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cccd",nullable = false)
     private String cccd;
     private String ten;
     private int namsinh;
@@ -35,7 +34,7 @@ public class TaiKhoan {
     @OneToMany(mappedBy = "taiKhoan")
     private List<NguoiThan> nguoiThans;
 
-    public TaiKhoan(String cccd, String ten, int namsinh, String sdt, String email, String gioitinh, LoaiNguoiDung loaiNguoiDung) {
+    public TaiKhoan(String cccd, String ten, int namsinh, String sdt, String email, String gioitinh, LoaiNguoiDung loaiNguoiDung,DiaChi diaChi) {
         this.cccd = cccd;
         this.ten = ten;
         this.namsinh = namsinh;
@@ -43,5 +42,6 @@ public class TaiKhoan {
         this.email = email;
         this.gioitinh = gioitinh;
         this.loaiNguoiDung = loaiNguoiDung;
+        this.diaChi=diaChi;
     }
 }

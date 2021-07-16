@@ -17,4 +17,7 @@
     <definition name="khaibaoytetoandan" extends="mainlayout.definition">
         <put-attribute name="body" value="/WEB-INF/jsp/khaibaoytetoandan.jsp"/>
     </definition>
+    <definition name="khaibaodichuyennoidia" extends="mainlayout.definition">
+        <put-attribute name="body" value="/WEB-INF/jsp/khaibaodichuyennoidia.jsp"/>
+    </definition>
 </tiles-definitions>

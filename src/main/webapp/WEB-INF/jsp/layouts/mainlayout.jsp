@@ -44,5 +44,17 @@
         <script src="/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
         <!-- Argon JS -->
         <script src="/js/argon.js?v=1.2.0"></script>
+        <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <!-- Javascript -->
+        <script>
+            $(function() {
+                $( "#datepicker-1" ).datepicker();
+            });
+            $(function() {
+                $( "#datepicker-2" ).datepicker();
+            });
+        </script>
     </body>
 </html>

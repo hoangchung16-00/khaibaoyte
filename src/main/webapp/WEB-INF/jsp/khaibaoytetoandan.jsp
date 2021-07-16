@@ -274,12 +274,10 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                    </div>
-
-                </form:form>
+                </div>
+        </form:form>
             </div>
         </div>
     </div>

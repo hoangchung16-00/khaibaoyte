@@ -20,7 +20,7 @@ public class PhieuKhaiBao {
     private Long maPhieu;
     private String hoten;
     private String diachi;
-    private Date ngayKhaiBao;
+    private Date ngaykhaibao;
     private int namsinh;
     private String email;
     private String quoctich;
@@ -44,10 +44,10 @@ public class PhieuKhaiBao {
     @JoinColumn(name = "cccd")
     private TaiKhoan taiKhoan;
 
-    public PhieuKhaiBao(String hoten, String diachi, Date ngayKhaiBao, int namsinh, String email, String quoctich, String gioitinh, String noikhaibao, String noidi, String noiden, String phuongtien, Date ngaydi, Date ngayden, String sdt, Boolean denvungdich, Boolean tiepxucnguoibenh, Boolean sot, Boolean ho, Boolean khotho, Boolean dauhong, Boolean moico, Boolean hathoi, TaiKhoan taiKhoan) {
+    public PhieuKhaiBao(String hoten, String diachi, Date ngaykhaibao, int namsinh, String email, String quoctich, String gioitinh, String noikhaibao, String noidi, String noiden, String phuongtien, Date ngaydi, Date ngayden, String sdt, Boolean denvungdich, Boolean tiepxucnguoibenh, Boolean sot, Boolean ho, Boolean khotho, Boolean dauhong, Boolean moico, Boolean hathoi, TaiKhoan taiKhoan) {
         this.hoten = hoten;
         this.diachi = diachi;
-        this.ngayKhaiBao = ngayKhaiBao;
+        this.ngaykhaibao = ngaykhaibao;
         this.namsinh = namsinh;
         this.email = email;
         this.quoctich = quoctich;
@@ -70,10 +70,10 @@ public class PhieuKhaiBao {
         this.taiKhoan = taiKhoan;
     }
 
-    public PhieuKhaiBao(String hoten, String diachi, Date ngayKhaiBao, int namsinh, String email, String quoctich, String gioitinh, String sdt, Boolean denvungdich, Boolean tiepxucnguoibenh, Boolean sot, Boolean ho, Boolean khotho, Boolean dauhong, Boolean moico, Boolean hathoi, TaiKhoan taiKhoan) {
+    public PhieuKhaiBao(String hoten, String diachi, Date ngaykhaibao, int namsinh, String email, String quoctich, String gioitinh, String sdt, Boolean denvungdich, Boolean tiepxucnguoibenh, Boolean sot, Boolean ho, Boolean khotho, Boolean dauhong, Boolean moico, Boolean hathoi, TaiKhoan taiKhoan) {
         this.hoten = hoten;
         this.diachi = diachi;
-        this.ngayKhaiBao = ngayKhaiBao;
+        this.ngaykhaibao = ngaykhaibao;
         this.namsinh = namsinh;
         this.email = email;
         this.quoctich = quoctich;

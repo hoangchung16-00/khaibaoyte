@@ -10,7 +10,7 @@ public class LoaiNguoiDungService {
     @Autowired
     private LoaiNguoiDungRepository loaiNguoiDungRepository;
 
-    public LoaiNguoiDung findLoaiNguoiDungByLoaiNguoiDung(String loainguoidung){
-        return loaiNguoiDungRepository.findLoaiNguoiDungByLoaiNguoiDung(loainguoidung);
+    public LoaiNguoiDung findLoaiNguoiDungByTenloainguoidung(String tenloainguoidung){
+        return loaiNguoiDungRepository.findLoaiNguoiDungByTenloainguoidung(tenloainguoidung);
     }
 }

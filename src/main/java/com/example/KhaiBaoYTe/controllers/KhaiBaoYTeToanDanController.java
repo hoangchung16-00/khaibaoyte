@@ -1,9 +1,6 @@
 package com.example.KhaiBaoYTe.controllers;
 
-import com.example.KhaiBaoYTe.entities.LoaiNguoiDung;
-import com.example.KhaiBaoYTe.entities.PhuongXa;
-import com.example.KhaiBaoYTe.entities.QuanHuyen;
-import com.example.KhaiBaoYTe.entities.TaiKhoan;
+import com.example.KhaiBaoYTe.entities.*;
 import com.example.KhaiBaoYTe.forms.KhaiBaoYTeToanDanForm;
 import com.example.KhaiBaoYTe.models.PhuongXaModel;
 import com.example.KhaiBaoYTe.models.QuanHuyenModel;
@@ -18,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Controller
 public class KhaiBaoYTeToanDanController {
@@ -33,6 +31,8 @@ public class KhaiBaoYTeToanDanController {
     private TaiKhoanService taiKhoanService;
     @Autowired
     private LoaiNguoiDungService loaiNguoiDungService;
+    @Autowired
+    private DiaChiService diaChiService;
 
     @GetMapping("/khaibaoytetoandan")
     public String getKhaiBaoYTeToan(Model model){
@@ -67,11 +67,15 @@ public class KhaiBaoYTeToanDanController {
         if (bindingResult.hasErrors()){
             return "khaibaoytetoandan";
         }
-        if(khaiBaoYTeToanDanForm.getCccd().equals(null)){
+        TaiKhoan taiKhoan= taiKhoanService.findTaiKhoanByCccd(khaiBaoYTeToanDanForm.getCccd());
+        if(taiKhoan==null){
+            DiaChi diaChi = diaChiService.findDiaChiByCccd(khaiBaoYTeToanDanForm.getCccd());
+            if(diaChi==null)
+                diaChiService.addDiaChi(khaiBaoYTeToanDanForm.getDiachi(),khaiBaoYTeToanDanForm.getCccd(),phuongXaService.findPhuongXaByMaPhuongXa(khaiBaoYTeToanDanForm.getMaphuongxa()));
             taiKhoanService.addTaiKhoanUser(khaiBaoYTeToanDanForm.getCccd(),khaiBaoYTeToanDanForm.getHoten(),
                     khaiBaoYTeToanDanForm.getNamsinh(),khaiBaoYTeToanDanForm.getSDT(),
                     khaiBaoYTeToanDanForm.getEmail(),khaiBaoYTeToanDanForm.getGioitinh(),
-                    loaiNguoiDungService.findLoaiNguoiDungByLoaiNguoiDung("user"));
+                    loaiNguoiDungService.findLoaiNguoiDungByTenloainguoidung("user"),diaChiService.findDiaChiByCccd(khaiBaoYTeToanDanForm.getCccd()));
         }
         String diachi = tinhTPService.findTinhTPByMaTinhTp(khaiBaoYTeToanDanForm.getMatinhtp()).getTentinhtp()+", "+
                 quanHuyenService.findQuanHuyenByMaQuanHuyen(khaiBaoYTeToanDanForm.getMaquanhuyen()).getTenquanhuyen()+", "+
@@ -85,7 +89,7 @@ public class KhaiBaoYTeToanDanController {
                 khaiBaoYTeToanDanForm.getHo(),khaiBaoYTeToanDanForm.getKhoTho(),
                 khaiBaoYTeToanDanForm.getDauHong(),khaiBaoYTeToanDanForm.getMoiCo(),
                 khaiBaoYTeToanDanForm.getHatHoi(),khaiBaoYTeToanDanForm.getCccd(),
-                taiKhoanService.findTaiKhoanByCCCD(khaiBaoYTeToanDanForm.getCccd()));
-        return "";
+                taiKhoanService.findTaiKhoanByCccd(khaiBaoYTeToanDanForm.getCccd()));
+        return "redirect:/login";
     }
 }
