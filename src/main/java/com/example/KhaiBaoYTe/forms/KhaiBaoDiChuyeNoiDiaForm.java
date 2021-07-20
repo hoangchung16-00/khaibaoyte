@@ -50,14 +50,22 @@ public class KhaiBaoDiChuyeNoiDiaForm {
     private String cccd;
     @NotNull
     private String phuongtien;
+    @NotNull
     private String noiditinhtp;
+    @NotNull
     private String noidiquanhuyen;
+    @NotNull
     private String noidiphuongxa;
+    @NotNull
     private String noidentinhtp;
+    @NotNull
     private String noidenquanhuyen;
+    @NotNull
     private String noidenphuongxa;
+    @NotNull
     private String sophuongtien;
+    @NotNull
+    private String ngaydi;
+    private String ngayden;
     private String soghe;
-    private Date ngaydi;
-    private Date ngayden;
 }

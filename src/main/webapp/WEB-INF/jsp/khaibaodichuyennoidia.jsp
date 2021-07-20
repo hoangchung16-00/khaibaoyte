@@ -24,12 +24,14 @@
                             <div class="form-group">
                                 <label class="form-control-label">Họ tên (Chữ in hoa)</label>
                                 <form:input type="text" class="form-control" path="hoten"/>
+                                <form:errors path="hoten"/>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="form-control-label">Số hộ chiếu / CMND / CCCD</label>
                                 <form:input path="cccd" type="text"  class="form-control"/>
+                                <form:errors path="cccd"/>
                             </div>
                         </div>
                     </div>
@@ -38,17 +40,19 @@
                             <div class="form-group">
                                 <label class="form-control-label">Năm sinh</label>
                                 <form:input type="text" class="form-control" path="namsinh"/>
+                                <form:errors path="namsinh"/>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="form-control-label">Quốc tịch</label>
                                 <form:input type="text"  class="form-control" path="quoctich"/>
+                                <form:errors path="quoctich"/>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Giới Tính</label>
+                                <label class="form-control-label">Giới Tính<form:errors path="gioitinh"/></label>
                                 <table class="">
                                     <tbody>
                                     <tr>
@@ -71,7 +75,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="form-control-label">Phương tiện đi lại</label>
+                                <label class="form-control-label">Phương tiện đi lại<form:errors path="gioitinh"/></label>
                                 <form:select type="text" class="form-control" path="phuongtien">
                                     <form:option value="Cá nhân" label="Cá nhân"/>
                                     <form:option value="Máy bay" label="Máy bay"/>
@@ -85,23 +89,23 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Nơi đi</label>
-                                <form:select onchange="loadqh(this.value)" id="comboboxTinhTP" path="noiditinhtp" class="form-control select2-hidden-accessible">
+                                <label class="form-control-label">Nơi đi<form:errors path="noiditinhtp"/></label>
+                                <form:select onchange="loadqh(this.value,'comboboxNoiDiQuanHuyen')" id="comboboxNoiDiTinhTP" path="noiditinhtp" class="form-control select2-hidden-accessible">
                                     <form:options  items="${tinhtps}" itemLabel="tentinhtp" itemValue="matinhtp"/>
                                 </form:select>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Quận/Huyện</label>
-                                <form:select id="comboboxQuanHuyen" onchange="loadpx(this.value)" path="noidiquanhuyen" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
+                                <label class="form-control-label">Quận/Huyện<form:errors path="noidiquanhuyen"/></label>
+                                <form:select id="comboboxNoiDiQuanHuyen" onchange="loadpx(this.value,'comboboxNoiDiPhuongXa')" path="noidiquanhuyen" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
                                 </form:select>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Phường/Xã</label>
-                                <form:select path="noidiphuongxa" id="comboboxPhuongXa" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
+                                <label class="form-control-label">Phường/Xã<form:errors path="noidiphuongxa"/></label>
+                                <form:select path="noidiphuongxa" id="comboboxNoiDiPhuongXa" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
                                 </form:select>
                             </div>
                         </div>
@@ -109,23 +113,23 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Nơi đến</label>
-                                <form:select onchange="loadqh(this.value)" id="comboboxTinhTP" path="noidentinhtp" class="form-control select2-hidden-accessible">
+                                <label class="form-control-label">Nơi đến<form:errors path="noidentinhtp"/></label>
+                                <form:select onchange="loadqh(this.value,'comboboxNoiDenQuanHuyen')" id="comboboxNoiDenTinhTP" path="noidentinhtp" class="form-control select2-hidden-accessible">
                                     <form:options  items="${tinhtps}" itemLabel="tentinhtp" itemValue="matinhtp"/>
                                 </form:select>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Quận/Huyện</label>
-                                <form:select id="comboboxQuanHuyen" onchange="loadpx(this.value)" path="noidenquanhuyen" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
+                                <label class="form-control-label">Quận/Huyện<form:errors path="noidenquanhuyen"/></label>
+                                <form:select id="comboboxNoiDenQuanHuyen" onchange="loadpx(this.value,'comboboxNoiDenPhuongXa')" path="noidenquanhuyen" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
                                 </form:select>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Phường/Xã</label>
-                                <form:select path="noidenphuongxa" id="comboboxPhuongXa" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
+                                <label class="form-control-label">Phường/Xã<form:errors path="noidenphuongxa"/></label>
+                                <form:select path="noidenphuongxa" id="comboboxNoiDenPhuongXa" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
                                 </form:select>
                             </div>
                         </div>
@@ -133,26 +137,30 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="form-control-label">Số phương tiện</label>
+                                <label class="form-control-label">Số phương tiện<form:errors path="sophuongtien"/></label>
                                 <form:input type="text" class="form-control" path="sophuongtien"/>
+                                <form:errors path="sophuongtien"/>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="form-control-label">Số ghế</label>
+                                <label class="form-control-label">Số ghế<form:errors path="soghe"/></label>
                                 <form:input type="text" class="form-control" path="soghe"/>
+                                <form:errors path="soghe"/>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="form-control-label">Ngày đi</label>
+                                <label class="form-control-label">Ngày đi<form:errors path="ngaydi"/></label>
                                 <form:input type="text" class="form-control" path="ngaydi" id="datepicker-1"/>
+                                <form:errors path="ngaydi"/>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="form-control-label">Ngày đến</label>
+                                <label class="form-control-label">Ngày đến<form:errors path="ngayden"/></label>
                                 <form:input type="text" class="form-control" path="ngayden" id="datepicker-2"/>
+                                <form:errors path="ngayden"/>
                             </div>
                         </div>
                     </div>
@@ -163,8 +171,8 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Nơi đi</label>
-                                <form:select onchange="loadqh(this.value)" id="comboboxTinhTP" path="matinhtp" class="form-control select2-hidden-accessible">
+                                <label class="form-control-label">Tỉnh/Thành Phố</label>
+                                <form:select onchange="loadqh(this.value,'comboboxQuanHuyen')" id="comboboxTinhTP" path="matinhtp" class="form-control select2-hidden-accessible">
                                     <form:options  items="${tinhtps}" itemLabel="tentinhtp" itemValue="matinhtp"/>
                                 </form:select>
                             </div>
@@ -172,7 +180,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label">Quận/Huyện</label>
-                                <form:select id="comboboxQuanHuyen" onchange="loadpx(this.value)" path="maquanhuyen" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
+                                <form:select id="comboboxQuanHuyen" onchange="loadpx(this.value,'comboboxPhuongXa')" path="maquanhuyen" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
                                 </form:select>
                             </div>
                         </div>
@@ -189,18 +197,21 @@
                             <div class="form-group">
                                 <label class="form-control-label">Số nhà, phố, tổ dân phố/thôn/đội</label>
                                 <form:input path="diachi" type="text" class="form-control"/>
+                                <form:errors path="diachi"/>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="form-control-label">Điện Thoại</label>
                                 <form:input path="SDT" type="text" class="form-control"/>
+                                <form:errors path="SDT"/>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="form-control-label">Email</label>
                                 <form:input path="email" type="text" class="form-control"/>
+                                <form:errors path="email"/>
                             </div>
                         </div>
                     </div>
@@ -222,6 +233,7 @@
                                     </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
                         <div class="col-lg-8">
@@ -241,6 +253,7 @@
                                     </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
                     </div>
@@ -267,6 +280,7 @@
                                     </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -286,6 +300,7 @@
                                     </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -305,6 +320,7 @@
                                     </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -324,6 +340,7 @@
                                     </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -343,6 +360,7 @@
                                     </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -354,14 +372,15 @@
                             <div class="form-group">
                                 <table class="">
                                     <tbody>
-                                    <tr>
-                                        <td><label><form:radiobutton value="1" checked="" path="hatHoi"/> Có</label></td>
-                                        <td>&nbsp;</td>
-                                        <td><label><form:radiobutton value="0" checked="" path="hatHoi"/> Không</label></td>
-                                        <td>&nbsp;</td>
-                                    </tr>
+                                        <tr>
+                                            <td><label><form:radiobutton value="1" checked="" path="hatHoi"/> Có</label></td>
+                                            <td>&nbsp;</td>
+                                            <td><label><form:radiobutton value="0" checked="" path="hatHoi"/> Không</label></td>
+                                            <td>&nbsp;</td>
+                                        </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -379,7 +398,7 @@
 </div>
 </div>
 <script type="text/javascript">
-    function loadqh(matinhtp) {
+    function loadqh(matinhtp,id) {
         $.ajax({
             type: 'GET',
             contentType:"application/json",
@@ -393,14 +412,14 @@
                 for(var i = 0; i < result.length; i++) {
                     s += '<option value="' + result[i].maquanhuyen + '">' + result[i].tenquanhuyen + '</option>';
                 }
-                $('#comboboxQuanHuyen').html(s);
+                $('#'+id).html(s);
             },
             error: function (e) {
                 console.log("ERROR: ",e);
             }
         });
     }
-    function loadpx(maqh) {
+    function loadpx(maqh,id) {
         $.ajax({
             type: 'GET',
             contentType:"application/json",
@@ -414,7 +433,7 @@
                 for(var j = 0; j < result1.length; j++) {
                     s1 += '<option value="' + result1[j].maphuongxa + '">' + result1[j].tenphuongxa + '</option>';
                 }
-                $('#comboboxPhuongXa').html(s1);
+                $('#'+id).html(s1);
             },
             error: function (e) {
                 console.log("ERROR: ",e);

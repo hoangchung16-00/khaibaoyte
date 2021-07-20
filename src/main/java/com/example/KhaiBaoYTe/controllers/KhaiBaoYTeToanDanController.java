@@ -40,28 +40,6 @@ public class KhaiBaoYTeToanDanController {
         model.addAttribute("tinhtps",tinhTPService.findAll());
         return "khaibaoytetoandan";
     }
-    @ResponseBody
-    @GetMapping("/loadQuanHuyenByTinhTP")
-    public String loadQuanHuyenByTinhTP(@RequestParam("matinhtp") String matinhtp){
-        Gson gson = new Gson();
-        List<QuanHuyen> quanHuyenList = quanHuyenService.findAllByMaTinhTp(matinhtp);
-        List<QuanHuyenModel> quanHuyens = new ArrayList<>();
-        for(QuanHuyen quanHuyen : quanHuyenList){
-            quanHuyens.add(new QuanHuyenModel(quanHuyen.getMaquanhuyen(),quanHuyen.getTenquanhuyen()));
-        }
-        return gson.toJson(quanHuyens);
-    }
-    @ResponseBody
-    @GetMapping("/loadPhuongXaByQuanHuyen")
-    public String loadPhuongXaByQuanHuyen(@RequestParam("maqh") String maquanhuyen){
-        Gson gson1 = new Gson();
-        List<PhuongXa> phuongXaList = phuongXaService.findAllByMaQuanHuyen(maquanhuyen);
-        List<PhuongXaModel> phuongXas = new ArrayList<>();
-        for(PhuongXa phuongXa : phuongXaList){
-            phuongXas.add(new PhuongXaModel(phuongXa.getMaphuongxa(),phuongXa.getTenphuongxa()));
-        }
-        return gson1.toJson(phuongXas);
-    }
     @PostMapping("/khaibaoytetoandan")
     public String postKhaiBaoYTeToan(@Valid @ModelAttribute("khaiBaoYTeToanDanForm") KhaiBaoYTeToanDanForm khaiBaoYTeToanDanForm, BindingResult bindingResult){
         if (bindingResult.hasErrors()){

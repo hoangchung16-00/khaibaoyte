@@ -17,7 +17,7 @@ import java.util.List;
 public class PhieuKhaiBao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long maPhieu;
+    private Long maphieu;
     private String hoten;
     private String diachi;
     private Date ngaykhaibao;
@@ -29,6 +29,8 @@ public class PhieuKhaiBao {
     private String noidi;
     private String noiden;
     private String phuongtien;
+    private String sophuongtien;
+    private String soghe;
     private Date ngaydi;
     private Date ngayden;
     private String sdt;
@@ -78,6 +80,33 @@ public class PhieuKhaiBao {
         this.email = email;
         this.quoctich = quoctich;
         this.gioitinh = gioitinh;
+        this.sdt = sdt;
+        this.denvungdich = denvungdich;
+        this.tiepxucnguoibenh = tiepxucnguoibenh;
+        this.sot = sot;
+        this.ho = ho;
+        this.khotho = khotho;
+        this.dauhong = dauhong;
+        this.moico = moico;
+        this.hathoi = hathoi;
+        this.taiKhoan = taiKhoan;
+    }
+
+    public PhieuKhaiBao(String hoten, String diachi, Date ngaykhaibao, int namsinh, String email, String quoctich, String gioitinh, String noidi, String noiden, String phuongtien,String sophuongtien,String soghe, Date ngaydi, Date ngayden, String sdt, Boolean denvungdich, Boolean tiepxucnguoibenh, Boolean sot, Boolean ho, Boolean khotho, Boolean dauhong, Boolean moico, Boolean hathoi, TaiKhoan taiKhoan) {
+        this.hoten = hoten;
+        this.diachi = diachi;
+        this.ngaykhaibao = ngaykhaibao;
+        this.namsinh = namsinh;
+        this.email = email;
+        this.quoctich = quoctich;
+        this.gioitinh = gioitinh;
+        this.noidi = noidi;
+        this.noiden = noiden;
+        this.phuongtien = phuongtien;
+        this.sophuongtien = sophuongtien;
+        this.soghe = soghe;
+        this.ngaydi = ngaydi;
+        this.ngayden = ngayden;
         this.sdt = sdt;
         this.denvungdich = denvungdich;
         this.tiepxucnguoibenh = tiepxucnguoibenh;

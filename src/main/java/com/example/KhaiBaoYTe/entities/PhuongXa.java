@@ -1,5 +1,6 @@
 package com.example.KhaiBaoYTe.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
@@ -16,11 +17,11 @@ public class PhuongXa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String maphuongxa;
     private String tenphuongxa;
-    @JsonIgnoreProperties
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "maquanhuyen")
     private QuanHuyen quanHuyen;
-    @JsonIgnoreProperties
+    @JsonIgnore
     @OneToMany(mappedBy="phuongXa",fetch = FetchType.LAZY)
     private List<DiaChi> diaChis;
 }

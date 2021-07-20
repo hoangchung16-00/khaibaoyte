@@ -20,4 +20,7 @@
     <definition name="khaibaodichuyennoidia" extends="mainlayout.definition">
         <put-attribute name="body" value="/WEB-INF/jsp/khaibaodichuyennoidia.jsp"/>
     </definition>
+    <definition name="thongkelichsukhaibao" extends="mainlayout.definition">
+        <put-attribute name="body" value="/WEB-INF/jsp/thongkelichsukhaibao.jsp"/>
+    </definition>
 </tiles-definitions>
