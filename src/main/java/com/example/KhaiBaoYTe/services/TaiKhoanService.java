@@ -27,4 +27,5 @@ public class TaiKhoanService {
     public void addTaiKhoanUser(String cccd, String ten, int namsinh, String sdt, String email, String gioitinh, LoaiNguoiDung loaiNguoiDung, DiaChi diaChi){
         taiKhoanRepository.save(new TaiKhoan(cccd,ten,namsinh,sdt,email,gioitinh,loaiNguoiDung,diaChi));
     }
+
 }

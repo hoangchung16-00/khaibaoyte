@@ -4,6 +4,7 @@ import com.example.KhaiBaoYTe.entities.PhieuKhaiBao;
 import com.example.KhaiBaoYTe.entities.TaiKhoan;
 import com.example.KhaiBaoYTe.repositories.PhieuKhaiBaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,7 +42,11 @@ public class PhieuKhaiBaoService {
         phieuKhaiBaoRepository.save(new PhieuKhaiBao(hoten,diachi,now,namsinh,email,quoctich,gioitinh,noidi,noiden,phuongtien,sophuongtien,soghe,datengaydi,datengayden,sdt,denvungdich,tiepxucnguoibenh,sot,ho,khotho,dauhong,moico,hathoi,taiKhoan));
     }
     @Transactional
-    public List<PhieuKhaiBao> findAllByTaiKhoan(TaiKhoan taiKhoan){
-        return phieuKhaiBaoRepository.findAllByTaiKhoan(taiKhoan);
+    public List<PhieuKhaiBao> findAllByTaiKhoan(TaiKhoan taiKhoan, Pageable pageable){
+        return phieuKhaiBaoRepository.findAllByTaiKhoan(taiKhoan,pageable);
+    }
+    @Transactional
+    public int getTotalPhieuKhaiBaoByTaiKhoan(TaiKhoan taikhoan){
+        return phieuKhaiBaoRepository.getTotalPhieuKhaiBaoByTaiKhoan(taikhoan);
     }
 }

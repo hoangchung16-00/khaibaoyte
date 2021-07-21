@@ -45,4 +45,6 @@ public class AjaxController {
         }
         return gson.toJson(phuongXas);
     }
+
+
 }
