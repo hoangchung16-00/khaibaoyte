@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Controller
-public class KhaiBaoYTeToanDanController {
+public class KhaiBaoYTeToanDanController extends BaseController{
     @Autowired
     private TinhTPService tinhTPService;
     @Autowired
@@ -37,7 +37,6 @@ public class KhaiBaoYTeToanDanController {
     @GetMapping("/khaibaoytetoandan")
     public String getKhaiBaoYTeToan(Model model){
         model.addAttribute("khaiBaoYTeToanDanForm",new KhaiBaoYTeToanDanForm());
-        model.addAttribute("tinhtps",tinhTPService.findAll());
         return "khaibaoytetoandan";
     }
     @PostMapping("/khaibaoytetoandan")
@@ -68,6 +67,6 @@ public class KhaiBaoYTeToanDanController {
                 khaiBaoYTeToanDanForm.getDauHong(),khaiBaoYTeToanDanForm.getMoiCo(),
                 khaiBaoYTeToanDanForm.getHatHoi(),khaiBaoYTeToanDanForm.getCccd(),
                 taiKhoanService.findTaiKhoanByCccd(khaiBaoYTeToanDanForm.getCccd()));
-        return "redirect:/login";
+        return "redirect:/home";
     }
 }

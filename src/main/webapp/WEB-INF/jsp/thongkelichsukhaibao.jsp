@@ -33,7 +33,6 @@
                         <thead class="thead-light">
                         <tr>
                             <th scope="col" class="sort" data-sort="name">Ngày khai báo</th>
-                            <th scope="col" class="sort" data-sort="budget">Nơi khai báo</th>
                             <th scope="col" class="sort" data-sort="status">Sốt</th>
                             <th scope="col" class="sort" data-sort="status">Ho</th>
                             <th scope="col" class="sort" data-sort="completion">Khó thở</th>
@@ -53,10 +52,6 @@
                                             </div>
                                         </div>
                                     </th>
-                                    <td class="budget">
-                                        ${phieuKhaiBao.noikhaibao}
-                                    </td>
-
                                     <td class="budget">
                                         <c:if test="${phieuKhaiBao.sot==true}">
                                             <img src="/img/true.png"  width="60" height="60">

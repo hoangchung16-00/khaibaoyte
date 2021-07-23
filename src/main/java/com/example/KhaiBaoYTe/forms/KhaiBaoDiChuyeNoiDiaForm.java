@@ -1,8 +1,11 @@
 package com.example.KhaiBaoYTe.forms;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import java.util.Date;
 
 @NoArgsConstructor
@@ -10,62 +13,73 @@ import java.util.Date;
 @Getter
 @Setter
 public class KhaiBaoDiChuyeNoiDiaForm {
-    @NotNull
+    @NotNull(message = "Bắt buộc")
+    @NotBlank(message = "Bắt buộc")
     private String hoten;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String matinhtp;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String maquanhuyen;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String maphuongxa;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
+    @Min(value = 1000,message = "Năm sinh không hợp lệ")
+    @Max(value = 2021,message = "Năm sinh không hợp lệ")
     private int namsinh;
-    @NotNull
+    @Email(message = "Email không hợp lệ")
     private String email;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
+    @NotBlank(message = "Bắt buộc")
     private String diachi;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String gioitinh;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
+    @NotBlank(message = "Bắt buộc")
     private String quoctich;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
+    @NotBlank(message = "Bắt buộc")
+    @Size(min=10,max=11,message = "Số điện thoại không hợp lệ")
     private String SDT;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean denVungDich;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean tiepXucNguoiBenh;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean sot;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean ho;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean khoTho;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean dauHong;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean moiCo;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean hatHoi;
-    @NotNull
+    @NotBlank(message = "Bắt buộc")
     private String cccd;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String phuongtien;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String noiditinhtp;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String noidiquanhuyen;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String noidiphuongxa;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String noidentinhtp;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String noidenquanhuyen;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String noidenphuongxa;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
+    @NotBlank(message = "Bắt buộc")
     private String sophuongtien;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
+    @DateTimeFormat(pattern="dd/MM/yyyy")
+    @NotBlank(message = "Bắt buộc")
     private String ngaydi;
+    @DateTimeFormat(pattern="dd/MM/yyyy")
     private String ngayden;
     private String soghe;
 }

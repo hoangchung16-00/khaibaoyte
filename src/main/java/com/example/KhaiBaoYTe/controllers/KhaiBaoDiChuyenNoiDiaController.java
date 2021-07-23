@@ -23,7 +23,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-public class KhaiBaoDiChuyenNoiDiaController {
+public class KhaiBaoDiChuyenNoiDiaController extends BaseController{
     @Autowired
     private TinhTPService tinhTPService;
     @Autowired
@@ -42,12 +42,12 @@ public class KhaiBaoDiChuyenNoiDiaController {
     @GetMapping("/khaibaodichuyennoidia")
     public String getKhaiBaoDiChuyenNoiDia(Model model){
         model.addAttribute("khaiBaoDiChuyenNoiDiaForm",new KhaiBaoDiChuyeNoiDiaForm());
-        model.addAttribute("tinhtps",tinhTPService.findAll());
         return "khaibaodichuyennoidia";
     }
     @PostMapping("/khaibaodichuyennoidia")
     private String postKhaiBaoDiChuyenNoiDia(@Valid @ModelAttribute("khaiBaoDiChuyenNoiDiaForm") KhaiBaoDiChuyeNoiDiaForm khaiBaoDiChuyeNoiDiaForm, BindingResult bindingResult) throws ParseException {
         if (bindingResult.hasErrors()){
+
             return "khaibaodichuyennoidia";
         }
         TaiKhoan taiKhoan= taiKhoanService.findTaiKhoanByCccd(khaiBaoDiChuyeNoiDiaForm.getCccd());
@@ -79,7 +79,7 @@ public class KhaiBaoDiChuyenNoiDiaController {
                 khaiBaoDiChuyeNoiDiaForm.getTiepXucNguoiBenh(),khaiBaoDiChuyeNoiDiaForm.getSot(),
                 khaiBaoDiChuyeNoiDiaForm.getHo(),khaiBaoDiChuyeNoiDiaForm.getKhoTho(),khaiBaoDiChuyeNoiDiaForm.getDauHong(),
                 khaiBaoDiChuyeNoiDiaForm.getMoiCo(),khaiBaoDiChuyeNoiDiaForm.getHatHoi(),taiKhoan);
-        return "redirect:/login";
+        return "redirect:/home";
     }
 
 }

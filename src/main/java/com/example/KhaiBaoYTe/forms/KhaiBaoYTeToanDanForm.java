@@ -4,48 +4,53 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class KhaiBaoYTeToanDanForm {
+    @NotBlank(message = "Bắt buộc")
     @NotNull
     private String hoten;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String matinhtp;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String maquanhuyen;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String maphuongxa;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
+    @Min(value = 1000,message = "Năm sinh không hợp lệ")
+    @Max(value = 2021,message = "Năm sinh không hợp lệ")
     private int namsinh;
-    @NotNull
+    @Email(message = "Email không hợp lệ")
     private String email;
-    @NotNull
+    @NotBlank(message = "Bắt buộc")
     private String diachi;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private String gioitinh;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
+    @NotBlank(message = "Bắt buộc")
     private String quoctich;
-    @NotNull
+    @NotBlank(message ="Bắt buộc")
+    @Size(min=10,max=11,message = "Số điện thoại không hợp lệ")
     private String SDT;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean denVungDich;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean tiepXucNguoiBenh;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean sot;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean ho;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean khoTho;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean dauHong;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean moiCo;
-    @NotNull
+    @NotNull(message = "Bắt buộc")
     private Boolean hatHoi;
-    @NotNull
+    @NotBlank(message ="Bắt buộc")
     private String cccd;
 }

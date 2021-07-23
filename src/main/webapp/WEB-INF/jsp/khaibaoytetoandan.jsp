@@ -22,33 +22,33 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label">Họ tên (Chữ in hoa)</label>
+                                    <label class="form-control-label">Họ tên (Chữ in hoa)(*) <form:errors path="hoten" cssStyle="color: red"/></label>
                                     <form:input type="text" class="form-control" path="hoten"/>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label">Số hộ chiếu / CMND / CCCD</label>
-                                    <form:input path="cccd" type="text"  class="form-control"/>
+                                    <label class="form-control-label">Số hộ chiếu / CMND / CCCD(*) <form:errors path="cccd" cssStyle="color: red"/></label>
+                                    <form:input path="cccd" type="number"  class="form-control"/>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label class="form-control-label">Năm sinh</label>
-                                    <form:input type="text" class="form-control" path="namsinh"/>
+                                    <label class="form-control-label">Năm sinh(*) <form:errors path="namsinh" cssStyle="color: red"/></label>
+                                    <form:input type="number" class="form-control" path="namsinh"/>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label class="form-control-label">Quốc tịch</label>
+                                    <label class="form-control-label">Quốc tịch(*) <form:errors path="quoctich" cssStyle="color: red"/></label>
                                     <form:input type="text"  class="form-control" path="quoctich"/>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label class="form-control-label">Giới Tính</label>
+                                    <label class="form-control-label">Giới Tính(*) <form:errors path="gioitinh" cssStyle="color: red"/></label>
                                     <table class="">
                                         <tbody>
                                         <tr>
@@ -72,7 +72,7 @@
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label class="form-control-label">Tỉnh/Thành Phố</label>
+                                    <label class="form-control-label">Tỉnh/Thành Phố(*) <form:errors path="matinhtp" cssStyle="color: red"/></label>
                                     <form:select onchange="loadqh(this.value)" id="comboboxTinhTP" path="matinhtp" class="form-control select2-hidden-accessible">
                                         <form:options  items="${tinhtps}" itemLabel="tentinhtp" itemValue="matinhtp"/>
                                     </form:select>
@@ -80,39 +80,39 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label class="form-control-label">Quận/Huyện</label>
+                                    <label class="form-control-label">Quận/Huyện(*) <form:errors path="maquanhuyen" cssStyle="color: red"/></label>
                                     <form:select id="comboboxQuanHuyen" onchange="loadpx(this.value)" path="maquanhuyen" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
                                     </form:select>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label class="form-control-label">Phường/Xã</label>
+                                    <label class="form-control-label">Phường/Xã(*) <form:errors path="maphuongxa" cssStyle="color: red"/></label>
                                     <form:select path="maphuongxa" id="comboboxPhuongXa" class="form-control select2-hidden-accessible" data-msg-required="Bạn chưa chọn quốc tịch" aria-hidden="true">
                                     </form:select>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label class="form-control-label">Số nhà, phố, tổ dân phố/thôn/đội</label>
+                                    <label class="form-control-label">Số nhà, phố, tổ dân phố/thôn/đội(*) <form:errors path="diachi" cssStyle="color: red"/></label>
                                     <form:input path="diachi" type="text" class="form-control"/>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label">Điện Thoại</label>
-                                    <form:input path="SDT" type="text" class="form-control"/>
+                                    <label class="form-control-label">Điện Thoại(*) <form:errors path="SDT" cssStyle="color: red"/></label>
+                                    <form:input path="SDT" type="number" class="form-control"/>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label">Email</label>
-                                    <form:input path="email" type="text" class="form-control"/>
+                                    <label class="form-control-label">Email <form:errors path="email" cssStyle="color: red"/></label>
+                                    <form:input path="email" type="email" class="form-control"/>
                                 </div>
                             </div>
                             <div class="col-lg-8">
                                 <div class="form-group">
-                                    <label class="form-control-label">Trong vòng 14 ngày qua, Anh/Chị có đến tỉnh/thành phố, quốc gia/vùng lãnh thổ nào có dịch</label>
+                                    <label class="form-control-label">Trong vòng 14 ngày qua, Anh/Chị có đến tỉnh/thành phố, quốc gia/vùng lãnh thổ nào có dịch(*) <form:errors path="denVungDich" cssStyle="color: red"/></label>
                                 </div>
                             </div>
                             <div class="col-lg-2">
@@ -131,7 +131,7 @@
                             </div>
                             <div class="col-lg-8">
                                 <div class="form-group">
-                                    <label class="form-control-label">Trong vòng 14 ngày qua, Anh/Chị có tiếp xúc với người bị bệnh</label>
+                                    <label class="form-control-label">Trong vòng 14 ngày qua, Anh/Chị có tiếp xúc với người bị bệnh(*) <form:errors path="tiepXucNguoiBenh" cssStyle="color: red"/></label>
                                 </div>
                             </div>
                             <div class="col-lg-2">
@@ -155,7 +155,7 @@
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <label class="form-control-label">Ho</label>
+                                    <label class="form-control-label">Ho(*) <form:errors path="ho" cssStyle="color: red"/></label>
                                 </div>
                             </div>
                             <div class="col-lg-10">
@@ -174,7 +174,7 @@
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <label class="form-control-label">Sốt</label>
+                                    <label class="form-control-label">Sốt(*) <form:errors path="sot" cssStyle="color: red"/></label>
                                 </div>
                             </div>
                             <div class="col-lg-10">
@@ -193,7 +193,7 @@
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <label class="form-control-label">Khó thở</label>
+                                    <label class="form-control-label">Khó thở(*) <form:errors path="khoTho" cssStyle="color: red"/></label>
                                 </div>
                             </div>
                             <div class="col-lg-10">
@@ -212,7 +212,7 @@
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <label class="form-control-label">Mỏi cơ</label>
+                                    <label class="form-control-label">Mỏi cơ(*) <form:errors path="moiCo" cssStyle="color: red"/></label>
                                 </div>
                             </div>
                             <div class="col-lg-10">
@@ -231,7 +231,7 @@
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <label class="form-control-label">Đau họng</label>
+                                    <label class="form-control-label">Đau họng(*) <form:errors path="dauHong" cssStyle="color: red"/></label>
                                 </div>
                             </div>
                             <div class="col-lg-10">
@@ -250,7 +250,7 @@
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <label class="form-control-label">Hắt hơi</label>
+                                    <label class="form-control-label">Hắt hơi(*) <form:errors path="hatHoi" cssStyle="color: red"/></label>
                                 </div>
                             </div>
                             <div class="col-lg-10">
