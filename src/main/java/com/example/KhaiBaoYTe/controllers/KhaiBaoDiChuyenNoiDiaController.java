@@ -39,12 +39,12 @@ public class KhaiBaoDiChuyenNoiDiaController extends BaseController{
     @Autowired
     private PhieuKhaiBaoService phieuKhaiBaoService;
 
-    @GetMapping("/khaibaodichuyennoidia")
+    @GetMapping("khaibaodichuyennoidia")
     public String getKhaiBaoDiChuyenNoiDia(Model model){
         model.addAttribute("khaiBaoDiChuyenNoiDiaForm",new KhaiBaoDiChuyeNoiDiaForm());
         return "khaibaodichuyennoidia";
     }
-    @PostMapping("/khaibaodichuyennoidia")
+    @PostMapping("khaibaodichuyennoidia")
     private String postKhaiBaoDiChuyenNoiDia(@Valid @ModelAttribute("khaiBaoDiChuyenNoiDiaForm") KhaiBaoDiChuyeNoiDiaForm khaiBaoDiChuyeNoiDiaForm, BindingResult bindingResult) throws ParseException {
         if (bindingResult.hasErrors()){
 
@@ -79,7 +79,7 @@ public class KhaiBaoDiChuyenNoiDiaController extends BaseController{
                 khaiBaoDiChuyeNoiDiaForm.getTiepXucNguoiBenh(),khaiBaoDiChuyeNoiDiaForm.getSot(),
                 khaiBaoDiChuyeNoiDiaForm.getHo(),khaiBaoDiChuyeNoiDiaForm.getKhoTho(),khaiBaoDiChuyeNoiDiaForm.getDauHong(),
                 khaiBaoDiChuyeNoiDiaForm.getMoiCo(),khaiBaoDiChuyeNoiDiaForm.getHatHoi(),taiKhoan);
-        return "redirect:/home";
+        return "redirect:/";
     }
 
 }

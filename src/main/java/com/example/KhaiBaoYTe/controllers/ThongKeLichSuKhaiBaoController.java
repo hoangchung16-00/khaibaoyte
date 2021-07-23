@@ -17,7 +17,7 @@ public class ThongKeLichSuKhaiBaoController {
     private PhieuKhaiBaoService phieuKhaiBaoService;
     @Autowired
     private TaiKhoanService taiKhoanService;
-    @GetMapping("/thongkelichsukhaibao/{cccd}")
+    @GetMapping("thongkelichsukhaibao/{cccd}")
     public String getThongKeLichSuKhaiBaoTaiKhoan(Model model, @PathVariable(name = "cccd",required = false) String cccd,@RequestParam(value = "page", defaultValue = "1") int page){
         model.addAttribute("searchForm",new SearchForm());
         TaiKhoan taiKhoan = taiKhoanService.findTaiKhoanByCccd(cccd);
@@ -27,10 +27,10 @@ public class ThongKeLichSuKhaiBaoController {
         model.addAttribute("phieuKhaiBaos",phieuKhaiBaoService.findAllByTaiKhoan(taiKhoan,pageable));
         return "thongkelichsukhaibao";
     }
-    @PostMapping("/searchCCCD")
+    @PostMapping("searchCCCD")
     public String postSearchCCCd(@ModelAttribute("searchForm")SearchForm searchForm){
         return "redirect:/thongkelichsukhaibao/"+searchForm.getCccd();
-    }@GetMapping("/thongkelichsukhaibao")
+    }@GetMapping("thongkelichsukhaibao")
     public String getThongKeLichSuKhaiBao(Model model){
         model.addAttribute("searchForm",new SearchForm());
         return "thongkelichsukhaibao";

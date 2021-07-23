@@ -24,7 +24,7 @@ public class AjaxController {
     private PhuongXaService phuongXaService;
 
     @ResponseBody
-    @GetMapping("/loadQuanHuyenByTinhTP")
+    @GetMapping("loadQuanHuyenByTinhTP")
     public String loadQuanHuyenByTinhTP(@RequestParam("matinhtp") String matinhtp){
         Gson gson = new Gson();
         List<QuanHuyen> quanHuyenList = quanHuyenService.findAllByMaTinhTp(matinhtp);
@@ -35,7 +35,7 @@ public class AjaxController {
         return gson.toJson(quanHuyens);
     }
     @ResponseBody
-    @GetMapping("/loadPhuongXaByQuanHuyen")
+    @GetMapping("loadPhuongXaByQuanHuyen")
     public String loadPhuongXaByQuanHuyen(@RequestParam("maqh") String maquanhuyen){
         Gson gson = new Gson();
         List<PhuongXa> phuongXaList = phuongXaService.findAllByMaQuanHuyen(maquanhuyen);

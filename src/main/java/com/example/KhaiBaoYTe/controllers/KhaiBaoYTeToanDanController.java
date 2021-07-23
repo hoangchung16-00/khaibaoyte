@@ -34,12 +34,12 @@ public class KhaiBaoYTeToanDanController extends BaseController{
     @Autowired
     private DiaChiService diaChiService;
 
-    @GetMapping("/khaibaoytetoandan")
+    @GetMapping("khaibaoytetoandan")
     public String getKhaiBaoYTeToan(Model model){
         model.addAttribute("khaiBaoYTeToanDanForm",new KhaiBaoYTeToanDanForm());
         return "khaibaoytetoandan";
     }
-    @PostMapping("/khaibaoytetoandan")
+    @PostMapping("khaibaoytetoandan")
     public String postKhaiBaoYTeToan(@Valid @ModelAttribute("khaiBaoYTeToanDanForm") KhaiBaoYTeToanDanForm khaiBaoYTeToanDanForm, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
             return "khaibaoytetoandan";
@@ -67,6 +67,6 @@ public class KhaiBaoYTeToanDanController extends BaseController{
                 khaiBaoYTeToanDanForm.getDauHong(),khaiBaoYTeToanDanForm.getMoiCo(),
                 khaiBaoYTeToanDanForm.getHatHoi(),khaiBaoYTeToanDanForm.getCccd(),
                 taiKhoanService.findTaiKhoanByCccd(khaiBaoYTeToanDanForm.getCccd()));
-        return "redirect:/home";
+        return "redirect:/";
     }
 }
