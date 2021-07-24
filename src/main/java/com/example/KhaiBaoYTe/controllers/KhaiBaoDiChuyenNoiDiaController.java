@@ -60,6 +60,7 @@ public class KhaiBaoDiChuyenNoiDiaController extends BaseController{
                     khaiBaoDiChuyeNoiDiaForm.getEmail(),khaiBaoDiChuyeNoiDiaForm.getGioitinh(),
                     loaiNguoiDungService.findLoaiNguoiDungByTenloainguoidung("user"),diaChiService.findDiaChiByCccd(khaiBaoDiChuyeNoiDiaForm.getCccd()));
         }
+        TaiKhoan taiKhoan1 = taiKhoanService.findTaiKhoanByCccd(khaiBaoDiChuyeNoiDiaForm.getCccd());
         String diachi = tinhTPService.findTinhTPByMaTinhTp(khaiBaoDiChuyeNoiDiaForm.getMatinhtp()).getTentinhtp()+", "+
                 quanHuyenService.findQuanHuyenByMaQuanHuyen(khaiBaoDiChuyeNoiDiaForm.getMaquanhuyen()).getTenquanhuyen()+", "+
                 phuongXaService.findPhuongXaByMaPhuongXa(khaiBaoDiChuyeNoiDiaForm.getMaphuongxa()).getTenphuongxa()+", "+
@@ -78,7 +79,7 @@ public class KhaiBaoDiChuyenNoiDiaController extends BaseController{
                 khaiBaoDiChuyeNoiDiaForm.getSDT(),khaiBaoDiChuyeNoiDiaForm.getDenVungDich(),
                 khaiBaoDiChuyeNoiDiaForm.getTiepXucNguoiBenh(),khaiBaoDiChuyeNoiDiaForm.getSot(),
                 khaiBaoDiChuyeNoiDiaForm.getHo(),khaiBaoDiChuyeNoiDiaForm.getKhoTho(),khaiBaoDiChuyeNoiDiaForm.getDauHong(),
-                khaiBaoDiChuyeNoiDiaForm.getMoiCo(),khaiBaoDiChuyeNoiDiaForm.getHatHoi(),taiKhoan);
+                khaiBaoDiChuyeNoiDiaForm.getMoiCo(),khaiBaoDiChuyeNoiDiaForm.getHatHoi(),taiKhoan1);
         return "redirect:/";
     }
 

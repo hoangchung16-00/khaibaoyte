@@ -38,7 +38,7 @@ public class KhaiBaoYTeToanDanForm {
     @NotBlank(message ="Bắt buộc")
     @Size(min=10,max=11,message = "Số điện thoại không hợp lệ")
     private String SDT;
-    @NotBlank(message = "Bắt buộc")
+    @NotNull(message = "Bắt buộc")
     private byte denVungDich;
     @NotNull(message = "Bắt buộc")
     private byte tiepXucNguoiBenh;
