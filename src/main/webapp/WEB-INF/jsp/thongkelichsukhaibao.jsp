@@ -19,7 +19,8 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-search"></i></span>
                                 </div>
-                                <form:input path="cccd" class="form-control" placeholder="Search" type="text"/>
+                                <form:input path="cccd" class="form-control" placeholder="Search" type="number"/>
+                                <form:errors path="cccd" cssStyle="color: red"/>
                             </div>
                         </div>
                         <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
