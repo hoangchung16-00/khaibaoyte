@@ -34,19 +34,19 @@ public class PhieuKhaiBao {
     private Date ngaydi;
     private Date ngayden;
     private String sdt;
-    private Boolean denvungdich;
-    private Boolean tiepxucnguoibenh;
-    private Boolean sot;
-    private Boolean ho;
-    private Boolean khotho;
-    private Boolean dauhong;
-    private Boolean moico;
-    private Boolean hathoi;
+    private byte denvungdich;
+    private byte tiepxucnguoibenh;
+    private byte sot;
+    private byte ho;
+    private byte khotho;
+    private byte dauhong;
+    private byte moico;
+    private byte hathoi;
     @ManyToOne
     @JoinColumn(name = "cccd")
     private TaiKhoan taiKhoan;
 
-    public PhieuKhaiBao(String hoten, String diachi, Date ngaykhaibao, int namsinh, String email, String quoctich, String gioitinh, String noikhaibao, String noidi, String noiden, String phuongtien, Date ngaydi, Date ngayden, String sdt, Boolean denvungdich, Boolean tiepxucnguoibenh, Boolean sot, Boolean ho, Boolean khotho, Boolean dauhong, Boolean moico, Boolean hathoi, TaiKhoan taiKhoan) {
+    public PhieuKhaiBao(String hoten, String diachi, Date ngaykhaibao, int namsinh, String email, String quoctich, String gioitinh, String noikhaibao, String noidi, String noiden, String phuongtien, Date ngaydi, Date ngayden, String sdt, byte denvungdich, byte tiepxucnguoibenh, byte sot, byte ho, byte khotho, byte dauhong, byte moico, byte hathoi, TaiKhoan taiKhoan) {
         this.hoten = hoten;
         this.diachi = diachi;
         this.ngaykhaibao = ngaykhaibao;
@@ -72,7 +72,7 @@ public class PhieuKhaiBao {
         this.taiKhoan = taiKhoan;
     }
 
-    public PhieuKhaiBao(String hoten, String diachi, Date ngaykhaibao, int namsinh, String email, String quoctich, String gioitinh, String sdt, Boolean denvungdich, Boolean tiepxucnguoibenh, Boolean sot, Boolean ho, Boolean khotho, Boolean dauhong, Boolean moico, Boolean hathoi, TaiKhoan taiKhoan) {
+    public PhieuKhaiBao(String hoten, String diachi, Date ngaykhaibao, int namsinh, String email, String quoctich, String gioitinh, String sdt, byte denvungdich, byte tiepxucnguoibenh, byte sot, byte ho, byte  khotho, byte dauhong, byte moico, byte hathoi, TaiKhoan taiKhoan) {
         this.hoten = hoten;
         this.diachi = diachi;
         this.ngaykhaibao = ngaykhaibao;
@@ -92,7 +92,7 @@ public class PhieuKhaiBao {
         this.taiKhoan = taiKhoan;
     }
 
-    public PhieuKhaiBao(String hoten, String diachi, Date ngaykhaibao, int namsinh, String email, String quoctich, String gioitinh, String noidi, String noiden, String phuongtien,String sophuongtien,String soghe, Date ngaydi, Date ngayden, String sdt, Boolean denvungdich, Boolean tiepxucnguoibenh, Boolean sot, Boolean ho, Boolean khotho, Boolean dauhong, Boolean moico, Boolean hathoi, TaiKhoan taiKhoan) {
+    public PhieuKhaiBao(String hoten, String diachi, Date ngaykhaibao, int namsinh, String email, String quoctich, String gioitinh, String noidi, String noiden, String phuongtien,String sophuongtien,String soghe, Date ngaydi, Date ngayden, String sdt, byte denvungdich, byte tiepxucnguoibenh, byte sot, byte ho, byte khotho, byte dauhong, byte moico, byte hathoi, TaiKhoan taiKhoan) {
         this.hoten = hoten;
         this.diachi = diachi;
         this.ngaykhaibao = ngaykhaibao;

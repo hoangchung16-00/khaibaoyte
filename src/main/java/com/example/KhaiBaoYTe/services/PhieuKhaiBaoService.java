@@ -22,23 +22,23 @@ public class PhieuKhaiBaoService {
     private PhieuKhaiBaoRepository phieuKhaiBaoRepository;
 
     @Transactional
-    public void addPhieuKhaiBaoToanDan(String hoTen, int namsinh, String email, String diachi, String gioitinh, String quoctich, String sdt, Boolean denVungDich, Boolean tiepXucNguoiBenh, Boolean sot, Boolean ho, Boolean khoTho, Boolean dauHong, Boolean moiCo, Boolean hatHoi, String cccd, TaiKhoan taiKhoan){
+    public void addPhieuKhaiBaoToanDan(String hoTen, int namsinh, String email, String diachi, String gioitinh, String quoctich, String sdt, byte denVungDich, byte tiepXucNguoiBenh, byte sot, byte ho, byte khoTho, byte dauHong, byte moiCo, byte hatHoi, String cccd, TaiKhoan taiKhoan){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         Date now =  java.sql.Timestamp.valueOf(LocalDateTime.now());
         phieuKhaiBaoRepository.save(new PhieuKhaiBao(hoTen,diachi,now,namsinh,email,quoctich,gioitinh,sdt,denVungDich,tiepXucNguoiBenh,sot,ho,khoTho,dauHong,moiCo,hatHoi,taiKhoan));
     }
 
     @Transactional
-    public void addPhieuKhaiBaoDiChuyenNoiDia(String hoten, String diachi, int namsinh, String email, String quoctich, String gioitinh, String noidi, String noiden, String phuongtien,String sophuongtien,String soghe, String ngaydi, String ngayden, String sdt, Boolean denvungdich, Boolean tiepxucnguoibenh, Boolean sot, Boolean ho, Boolean khotho, Boolean dauhong, Boolean moico, Boolean hathoi, TaiKhoan taiKhoan) throws ParseException {
+    public void addPhieuKhaiBaoDiChuyenNoiDia(String hoten, String diachi, int namsinh, String email, String quoctich, String gioitinh, String noidi, String noiden, String phuongtien,String sophuongtien,String soghe, String ngaydi, String ngayden, String sdt, byte denvungdich, byte tiepxucnguoibenh, byte sot, byte ho, byte khotho, byte dauhong, byte moico, byte hathoi, TaiKhoan taiKhoan) throws ParseException {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         Date now =  java.sql.Timestamp.valueOf(LocalDateTime.now());
         Date datengayden;
         if(ngayden=="") {
             datengayden=null;
         } else {
-            datengayden = new SimpleDateFormat("dd/MM/yyyy").parse(ngayden);
+            datengayden = new SimpleDateFormat("yyyy-MM-dd").parse(ngayden);
         }
-        Date datengaydi = new SimpleDateFormat("dd/MM/yyyy").parse(ngaydi);
+        Date datengaydi = new SimpleDateFormat("yyyy-MM-dd").parse(ngaydi);
         phieuKhaiBaoRepository.save(new PhieuKhaiBao(hoten,diachi,now,namsinh,email,quoctich,gioitinh,noidi,noiden,phuongtien,sophuongtien,soghe,datengaydi,datengayden,sdt,denvungdich,tiepxucnguoibenh,sot,ho,khotho,dauhong,moico,hathoi,taiKhoan));
     }
     @Transactional

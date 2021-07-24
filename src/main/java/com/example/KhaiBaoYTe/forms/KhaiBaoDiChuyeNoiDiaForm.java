@@ -41,21 +41,21 @@ public class KhaiBaoDiChuyeNoiDiaForm {
     @Size(min=10,max=11,message = "Số điện thoại không hợp lệ")
     private String SDT;
     @NotNull(message = "Bắt buộc")
-    private Boolean denVungDich;
+    private byte denVungDich;
     @NotNull(message = "Bắt buộc")
-    private Boolean tiepXucNguoiBenh;
+    private byte tiepXucNguoiBenh;
     @NotNull(message = "Bắt buộc")
-    private Boolean sot;
+    private byte sot;
     @NotNull(message = "Bắt buộc")
-    private Boolean ho;
+    private byte ho;
     @NotNull(message = "Bắt buộc")
-    private Boolean khoTho;
+    private byte khoTho;
     @NotNull(message = "Bắt buộc")
-    private Boolean dauHong;
+    private byte dauHong;
     @NotNull(message = "Bắt buộc")
-    private Boolean moiCo;
+    private byte moiCo;
     @NotNull(message = "Bắt buộc")
-    private Boolean hatHoi;
+    private byte hatHoi;
     @NotBlank(message = "Bắt buộc")
     private String cccd;
     @NotNull(message = "Bắt buộc")

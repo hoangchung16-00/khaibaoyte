@@ -53,32 +53,32 @@
                                         </div>
                                     </th>
                                     <td class="budget">
-                                        <c:if test="${phieuKhaiBao.sot==true}">
+                                        <c:if test="${phieuKhaiBao.sot==1}">
                                             <img src="/img/true.png"  width="60" height="60">
                                         </c:if>
                                     </td>
                                     <td class="budget">
-                                        <c:if test="${phieuKhaiBao.ho==true}">
+                                        <c:if test="${phieuKhaiBao.ho==1}">
                                             <img src="/img/true.png"  width="60" height="60">
                                         </c:if>
                                     </td>
                                     <td class="budget">
-                                        <c:if test="${phieuKhaiBao.khotho==true}">
+                                        <c:if test="${phieuKhaiBao.khotho==1}">
                                             <img src="/img/true.png" width="60" height="60">
                                         </c:if>
                                     </td>
                                     <td class="budget">
-                                        <c:if test="${phieuKhaiBao.moico==true}">
+                                        <c:if test="${phieuKhaiBao.moico==1}">
                                             <img src="/img/true.png" width="60" height="60">
                                         </c:if>
                                     </td>
                                     <td class="budget">
-                                        <c:if test="${phieuKhaiBao.hathoi==true}">
+                                        <c:if test="${phieuKhaiBao.hathoi==1}">
                                             <img src="/img/true.png" width="60" height="60">
                                         </c:if>
                                     </td>
                                     <td class="budget">
-                                        <c:if test="${phieuKhaiBao.dauhong==true}">
+                                        <c:if test="${phieuKhaiBao.dauhong==1}">
                                             <img src="/img/true.png" width="60" height="60">
                                         </c:if>
                                     </td>
