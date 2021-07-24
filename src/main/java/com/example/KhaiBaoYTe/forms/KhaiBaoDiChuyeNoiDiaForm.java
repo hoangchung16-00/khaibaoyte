@@ -17,10 +17,13 @@ public class KhaiBaoDiChuyeNoiDiaForm {
     @NotBlank(message = "Bắt buộc")
     private String hoten;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int matinhtp;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int maquanhuyen;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int maphuongxa;
     @NotNull(message = "Bắt buộc")
     @Min(value = 1000,message = "Năm sinh không hợp lệ")
@@ -61,16 +64,22 @@ public class KhaiBaoDiChuyeNoiDiaForm {
     @NotNull(message = "Bắt buộc")
     private String phuongtien;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int noiditinhtp;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int noidiquanhuyen;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int noidiphuongxa;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int noidentinhtp;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int noidenquanhuyen;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int noidenphuongxa;
     @NotNull(message = "Bắt buộc")
     @NotBlank(message = "Bắt buộc")

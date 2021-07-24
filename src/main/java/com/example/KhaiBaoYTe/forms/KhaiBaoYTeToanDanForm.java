@@ -14,10 +14,13 @@ public class KhaiBaoYTeToanDanForm {
     @NotNull
     private String hoten;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int matinhtp;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int maquanhuyen;
     @NotNull(message = "Bắt buộc")
+    @Min(value = 1,message = "Bắt buộc")
     private int maphuongxa;
     @NotNull(message = "Bắt buộc")
     @Min(value = 1000,message = "Năm sinh không hợp lệ")
@@ -35,7 +38,7 @@ public class KhaiBaoYTeToanDanForm {
     @NotBlank(message ="Bắt buộc")
     @Size(min=10,max=11,message = "Số điện thoại không hợp lệ")
     private String SDT;
-    @NotNull(message = "Bắt buộc")
+    @NotBlank(message = "Bắt buộc")
     private byte denVungDich;
     @NotNull(message = "Bắt buộc")
     private byte tiepXucNguoiBenh;
