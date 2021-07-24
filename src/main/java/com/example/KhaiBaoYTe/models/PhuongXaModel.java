@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class PhuongXaModel {
-    private String maphuongxa;
+    private int maphuongxa;
     private String tenphuongxa;
 }

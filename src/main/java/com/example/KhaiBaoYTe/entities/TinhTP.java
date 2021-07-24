@@ -16,7 +16,7 @@ import java.util.List;
 public class TinhTP {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String matinhtp;
+    private int matinhtp;
     private String tentinhtp;
     @JsonIgnore
     @OneToMany(mappedBy = "tinhTP",fetch = FetchType.LAZY)

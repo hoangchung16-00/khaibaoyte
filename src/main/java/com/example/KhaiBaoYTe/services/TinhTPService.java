@@ -17,7 +17,7 @@ public class TinhTPService {
     }
 
     @Transactional
-    public TinhTP findTinhTPByMaTinhTp(String matinhtp){
+    public TinhTP findTinhTPByMaTinhTp(int matinhtp){
         return tinhTPRepository.findTinhTPByMatinhtp(matinhtp);
     }
 }

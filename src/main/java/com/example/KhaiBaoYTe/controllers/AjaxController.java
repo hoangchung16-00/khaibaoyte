@@ -25,7 +25,7 @@ public class AjaxController {
 
     @ResponseBody
     @GetMapping("loadQuanHuyenByTinhTP")
-    public String loadQuanHuyenByTinhTP(@RequestParam("matinhtp") String matinhtp){
+    public String loadQuanHuyenByTinhTP(@RequestParam("matinhtp") int matinhtp){
         Gson gson = new Gson();
         List<QuanHuyen> quanHuyenList = quanHuyenService.findAllByMaTinhTp(matinhtp);
         List<QuanHuyenModel> quanHuyens = new ArrayList<>();

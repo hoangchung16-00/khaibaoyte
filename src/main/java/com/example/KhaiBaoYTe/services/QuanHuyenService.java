@@ -16,11 +16,11 @@ public class QuanHuyenService {
         return quanHuyenRepository.findAll();
     }
     @Transactional
-    public List<QuanHuyen> findAllByMaTinhTp(String matinhtp){
+    public List<QuanHuyen> findAllByMaTinhTp(int matinhtp){
         return quanHuyenRepository.findAllByMaTinhTP(matinhtp);
     }
     @Transactional
-    public QuanHuyen findQuanHuyenByMaQuanHuyen(String maquanhuyen){
+    public QuanHuyen findQuanHuyenByMaQuanHuyen(int maquanhuyen){
         return quanHuyenRepository.findQuanHuyenByMaquanhuyen(maquanhuyen);
     }
 }

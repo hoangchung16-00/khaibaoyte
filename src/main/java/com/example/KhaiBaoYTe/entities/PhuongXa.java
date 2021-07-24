@@ -15,7 +15,7 @@ import java.util.List;
 public class PhuongXa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String maphuongxa;
+    private int maphuongxa;
     private String tenphuongxa;
     @JsonIgnore
     @ManyToOne

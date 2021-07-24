@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class QuanHuyenModel {
-    private String maquanhuyen;
+    private int maquanhuyen;
     private String tenquanhuyen;
 }

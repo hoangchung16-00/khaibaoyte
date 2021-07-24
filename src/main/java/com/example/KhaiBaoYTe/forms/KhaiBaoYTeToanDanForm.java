@@ -14,11 +14,11 @@ public class KhaiBaoYTeToanDanForm {
     @NotNull
     private String hoten;
     @NotNull(message = "Bắt buộc")
-    private String matinhtp;
+    private int matinhtp;
     @NotNull(message = "Bắt buộc")
-    private String maquanhuyen;
+    private int maquanhuyen;
     @NotNull(message = "Bắt buộc")
-    private String maphuongxa;
+    private int maphuongxa;
     @NotNull(message = "Bắt buộc")
     @Min(value = 1000,message = "Năm sinh không hợp lệ")
     @Max(value = 2021,message = "Năm sinh không hợp lệ")

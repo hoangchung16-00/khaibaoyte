@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface PhuongXaRepository extends JpaRepository<PhuongXa,String> {
     @Query("select px from PhuongXa px where px.quanHuyen.maquanhuyen=?1")
-    List<PhuongXa> findAllByMaQuanHuyen(String maquanhuyen);
-    PhuongXa findPhuongXaByMaphuongxa(String maphuongxa);
+    List<PhuongXa> findAllByMaQuanHuyen(int maquanhuyen);
+    PhuongXa findPhuongXaByMaphuongxa(int maphuongxa);
 }
