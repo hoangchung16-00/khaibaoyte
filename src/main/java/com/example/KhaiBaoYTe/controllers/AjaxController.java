@@ -36,7 +36,7 @@ public class AjaxController {
     }
     @ResponseBody
     @GetMapping("loadPhuongXaByQuanHuyen")
-    public String loadPhuongXaByQuanHuyen(@RequestParam("maqh") String maquanhuyen){
+    public String loadPhuongXaByQuanHuyen(@RequestParam("maqh") int maquanhuyen){
         Gson gson = new Gson();
         List<PhuongXa> phuongXaList = phuongXaService.findAllByMaQuanHuyen(maquanhuyen);
         List<PhuongXaModel> phuongXas = new ArrayList<>();

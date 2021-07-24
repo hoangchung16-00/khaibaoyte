@@ -18,11 +18,11 @@ public class PhuongXaService {
     }
 
     @Transactional
-    public List<PhuongXa> findAllByMaQuanHuyen(String maquanhuyen){
+    public List<PhuongXa> findAllByMaQuanHuyen(int maquanhuyen){
         return phuongXaRepository.findAllByMaQuanHuyen(maquanhuyen);
     }
     @Transactional
-    public PhuongXa findPhuongXaByMaPhuongXa(String maphuongxa){
+    public PhuongXa findPhuongXaByMaPhuongXa(int maphuongxa){
         return phuongXaRepository.findPhuongXaByMaphuongxa(maphuongxa);
     }
 }
