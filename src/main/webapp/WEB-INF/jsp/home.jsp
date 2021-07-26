@@ -27,12 +27,6 @@ header section -->
 <header class="top-header">
     <div class="container">
         <div class="row">
-
-            <div class="col-xs-7 header-logo ">
-                <br>
-                <a href="/"><img src="/img/logo_byt.png" alt="" class="img-responsive logo"></a>
-            </div>
-
             <div class="col-md-12">
                 <nav class="navbar navbar-default">
                     <div class="container-fluid nav-bar">
