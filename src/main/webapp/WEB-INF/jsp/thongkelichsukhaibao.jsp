@@ -5,11 +5,17 @@
 <div class="container-fluid mt--6">
     <div class="row">
         <div class="col">
+
             <div class="card">
+
                 <!-- Card header -->
                 <div class="card-header border-0">
                     <h3 class="mb-0">Thống kê lịch sử khai báo</h3>
-
+                    <c:if test="${taikhoan.cccd!=null}">
+                        <a href="/exportReport/${taikhoan.cccd}" class="btn btn-sm btn-primary">Xuất file</a>
+                    </c:if>
+                </div>
+                <div class="col-4 text-right">
                 </div>
                 <div class="card-header border-0">
                     <h3 class="mb-0">${taikhoan.ten} - CCCD/CMND Số:${taikhoan.cccd} </h3>

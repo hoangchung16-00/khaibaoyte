@@ -12,4 +12,5 @@ public interface PhieuKhaiBaoRepository extends JpaRepository<PhieuKhaiBao,Long>
     List<PhieuKhaiBao> findAllByTaiKhoan(TaiKhoan takhoan, Pageable pageable);
     @Query("select count(pkb) from PhieuKhaiBao pkb where pkb.taiKhoan=?1")
     int getTotalPhieuKhaiBaoByTaiKhoan(TaiKhoan taikhoan);
+    List<PhieuKhaiBao> findAllByTaiKhoan(TaiKhoan taikhoan);
 }

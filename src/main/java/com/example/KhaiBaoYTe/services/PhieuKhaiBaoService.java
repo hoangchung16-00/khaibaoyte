@@ -49,4 +49,8 @@ public class PhieuKhaiBaoService {
     public int getTotalPhieuKhaiBaoByTaiKhoan(TaiKhoan taikhoan){
         return phieuKhaiBaoRepository.getTotalPhieuKhaiBaoByTaiKhoan(taikhoan);
     }
+    @Transactional
+    public List<PhieuKhaiBao> findAllByTaiKhoan(TaiKhoan taiKhoan){
+        return phieuKhaiBaoRepository.findAllByTaiKhoan(taiKhoan);
+    }
 }
