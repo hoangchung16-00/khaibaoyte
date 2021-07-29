@@ -12,7 +12,8 @@
                 <div class="card-header border-0">
                     <h3 class="mb-0">Thống kê lịch sử khai báo</h3>
                     <c:if test="${taikhoan.cccd!=null}">
-                        <a href="/exportReport/${taikhoan.cccd}" class="btn btn-sm btn-primary">Xuất file</a>
+                        <a href="/exportReport/excel/${taikhoan.cccd}" class="btn btn-sm btn-primary">Xuất file excel</a>
+                        <a href="/exportReport/pdf/${taikhoan.cccd}" class="btn btn-sm btn-primary">Xuất file pdf</a>
                     </c:if>
                 </div>
                 <div class="col-4 text-right">
